@@ -1,0 +1,30 @@
+ Name
+Sven Vo 583476
+
+# textme
+Das ist meine Chat App textme :
+- jeder Benutzer setzt sich seinen eigenen Account über die Registrierung
+- Daten werden gespeichert aber Nachrichten werden beim Neuladen im frontend nicht angezeigt.
+
+
+- _Textkanäle_
+    - erstellen, suchen und beitreten
+    - mehrere Nutzer sollen einen Textkanal beitreten können
+
+
+- _Direktnachrichten_
+    - an Nutzer mit deren erstellen Accounts
+    - Nachrichten werden durch Aktualisierung geladen
+
+# Entity Klassen
+
+## User
+- Benutzername
+- Passwort
+- E-Mail
+
+## Nachricht
+- Datum
+- Uhrzeit
+- Name des Senders
+- Inhalt
