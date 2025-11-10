@@ -4,7 +4,7 @@ Sven Vo 583476
 # textme
 Das ist meine Chat App textme :
 - jeder Benutzer setzt sich seinen eigenen Account über die Registrierung
-- Daten werden gespeichert aber Nachrichten werden beim Neuladen im frontend nicht angezeigt.
+
 
 
 - _Textkanäle_
