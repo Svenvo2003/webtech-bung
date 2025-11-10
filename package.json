@@ -1,0 +1,26 @@
+{
+  "name": "webtech-bung",
+  "version": "1.0.0",
+  "description": "Übung",
+  "homepage": "https://github.com/Svenvo2003/webtech-bung#readme",
+  "bugs": {
+    "url": "https://github.com/Svenvo2003/webtech-bung/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Svenvo2003/webtech-bung.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"jest\""
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/plugin-transform-modules-commonjs": "^7.27.1",
+    "babel-jest": "^30.2.0",
+    "jest": "^30.2.0"
+  }
+}
