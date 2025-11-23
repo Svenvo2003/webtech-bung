@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.432s</div>
+<div class="counter">0.532s</div>
 <p>duration</p>
 </div>
 </td>
@@ -82,7 +82,7 @@
 </thead>
 <tr>
 <td class="success">contextLoads()</td>
-<td class="success">0.432s</td>
+<td class="success">0.532s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -90,8 +90,8 @@
 <div class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>21:20:29.046 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [htw.webtech.test.TestApplicationTests]: TestApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-21:20:29.091 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration htw.webtech.test.TestApplication for test class htw.webtech.test.TestApplicationTests
+<pre>15:06:46.907 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [htw.webtech.test.TestApplicationTests]: TestApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:06:46.954 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration htw.webtech.test.TestApplication for test class htw.webtech.test.TestApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -102,9 +102,29 @@
 
  :: Spring Boot ::                (v3.5.6)
 
-2025-10-19T21:20:29.258+02:00  INFO 2587 --- [test] [    Test worker] htw.webtech.test.TestApplicationTests    : Starting TestApplicationTests using Java 21.0.7 with PID 2587 (started by svenvo in /Users/svenvo/IdeaProjects/ha6-Svenvo2003/webtech-bung)
-2025-10-19T21:20:29.258+02:00  INFO 2587 --- [test] [    Test worker] htw.webtech.test.TestApplicationTests    : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2025-10-19T21:20:29.680+02:00  INFO 2587 --- [test] [    Test worker] htw.webtech.test.TestApplicationTests    : Started TestApplicationTests in 0.532 seconds (process running for 0.991)
+2025-11-23T15:06:47.125+01:00  INFO 77614 --- [test] [    Test worker] htw.webtech.test.TestApplicationTests    : Starting TestApplicationTests using Java 21.0.7 with PID 77614 (started by svenvo in /Users/svenvo/IdeaProjects/ha6-Svenvo2003/webtech-bung)
+2025-11-23T15:06:47.126+01:00  INFO 77614 --- [test] [    Test worker] htw.webtech.test.TestApplicationTests    : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2025-11-23T15:06:47.374+01:00  INFO 77614 --- [test] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-23T15:06:47.384+01:00  INFO 77614 --- [test] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2025-11-23T15:06:47.522+01:00  INFO 77614 --- [test] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-23T15:06:47.602+01:00  INFO 77614 --- [test] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:6491c006-0945-433c-8248-422e913d9b0e user=SA
+2025-11-23T15:06:47.603+01:00  INFO 77614 --- [test] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-23T15:06:47.622+01:00  INFO 77614 --- [test] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-23T15:06:47.646+01:00  INFO 77614 --- [test] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-11-23T15:06:47.660+01:00  INFO 77614 --- [test] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-23T15:06:47.787+01:00  INFO 77614 --- [test] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-23T15:06:47.824+01:00  INFO 77614 --- [test] [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-23T15:06:47.969+01:00  INFO 77614 --- [test] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-23T15:06:47.971+01:00  INFO 77614 --- [test] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-23T15:06:48.034+01:00  WARN 77614 --- [test] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-23T15:06:48.210+01:00  INFO 77614 --- [test] [    Test worker] htw.webtech.test.TestApplicationTests    : Started TestApplicationTests in 1.195 seconds (process running for 1.679)
 </pre>
 </span>
 </div>
@@ -127,7 +147,7 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 8.14.3</a> at 19.10.2025, 21:20:30</p>
+<a href="https://www.gradle.org">Gradle 8.14.3</a> at 23.11.2025, 15:06:48</p>
 </div>
 </div>
 </body>
