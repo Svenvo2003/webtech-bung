@@ -18,7 +18,7 @@ Das ist meine Chat App textme :
 
 # Entity Klassen
 
-## chat.entity.User
+## htw.webtech.test.entity.User
 - Benutzername
 - Passwort
 - E-Mail

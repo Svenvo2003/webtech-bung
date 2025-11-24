@@ -1,4 +1,4 @@
-package chat.entity;
+package htw.webtech.test.entity;
 
 import java.time.LocalDateTime;
 

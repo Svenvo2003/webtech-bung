@@ -9,7 +9,7 @@ function navigateSite() {
 
 <template>
   <div>
-    <h1>💬 Bibs Chat - Milestone 3</h1>
+    <h1>💬 Bibs Chat </h1>
     <p>Frontend läuft erfolgreich! ✅</p>
     <div style="background: #e8f5e8; padding: 20px; border-radius: 10px; margin: 20px;">
       <h3>Chat-Funktion:</h3>

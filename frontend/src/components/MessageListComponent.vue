@@ -5,9 +5,9 @@
     </div>
 
     <div>
-      <label>chat.entity.User Name</label>
+      <label>htw.webtech.test.entity.User Name</label>
       <input type="text" v-model="newMessage.userName">
-      <label>chat.entity.User Message</label>
+      <label>htw.webtech.test.entity.User Message</label>
       <input type="text" v-model="newMessage.message">
 
       <button @click="addNewMessage">Senden</button>
