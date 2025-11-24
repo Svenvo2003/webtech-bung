@@ -9,8 +9,6 @@
         <li>✅ Echtzeit-Nachrichten</li>
         <li>✅ Benutzerprofile</li>
         <li>✅ Mehrere Chat-Räume</li>
-        <li>✅ Moderne Web-Technologien</li>
-        <li>✅ Responsive Design</li>
       </ul>
     </div>
 

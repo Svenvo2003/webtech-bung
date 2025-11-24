@@ -1,17 +1,18 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-
+import axios from "axios";
 const backendMessage = ref('Lade...');
 
-// API-Call zu deinem Render Backend
-onMounted(async () => {
-  try {
-    const response = await fetch('https://bibs-chat-backend.onrender.com/api/v1/test');
-    backendMessage.value = await response.text();
-  } catch (error) {
-    backendMessage.value = 'Backend nicht erreichbar';
-  }
-});
+function requestmessage(): void {
+  axios.get<string>('https://bibs-chat-backend.onrender.com/api/v1/test')
+    .then((response) => {
+      backendMessage.value = response.data;
+    })
+    .catch((error) => console.log(error));
+}
+
+onMounted(() => requestmessage());
+
 </script>
 
 <template>

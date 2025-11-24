@@ -3,6 +3,5 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/js-tdd" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/thing-frontend" vcs="Git" />
   </component>
 </project>
