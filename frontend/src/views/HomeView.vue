@@ -18,7 +18,7 @@ onMounted(() => requestmessage());
 <template>
   <div>
     <h1>💬 Bibs Chat</h1>
-    <p>Frontend läuft erfolgreich! ✅</p>
+    <p>Frontend läuft erfolgreich! Test ✅</p>
     <p>Backend Status: <strong>{{ backendMessage }}</strong></p>
     <div style="background: #e8f5e8; padding: 20px; border-radius: 10px; margin: 20px;">
       <h3>Chat-Funktion:</h3>
