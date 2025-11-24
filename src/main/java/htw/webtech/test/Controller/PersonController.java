@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1")
+@CrossOrigin(origins = "*")  // ← DIESE ZEILE EINFÜGEN!
 public class PersonController {
     private final PersonService personService;
     private List<Message> messages = new ArrayList<>();
