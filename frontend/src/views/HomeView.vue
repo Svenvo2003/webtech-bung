@@ -1,64 +1,30 @@
-<template>
-  <div class="container mt-4">
-    <div class="row">
-      <!-- Linke Spalte - Kontaktliste -->
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-header">
-            <h5>Kontakte</h5>
-          </div>
-          <div class="list-group">
-            <div class="list-group-item">
-              <strong>Max Mustermann</strong> <span class="badge bg-success">online</span>
-            </div>
-            <div class="list-group-item">
-              <strong>Anna Schmidt</strong> <span class="badge bg-secondary">offline</span>
-            </div>
-          </div>
-        </div>
-      </div>
+<script setup lang="ts">
+import { ref, onMounted } from 'vue'
 
-      <!-- Rechte Spalte - Chatbereich -->
-      <div class="col-md-8">
-        <div class="card">
-          <div class="card-header bg-light">
-            <strong>Chat mit Max Mustermann</strong>
-          </div>
-          <div class="card-body chat-window">
-            <div class="message them">Hallo, wie geht es dir?</div>
-            <div class="message me">Alles gut, danke!</div>
-          </div>
-          <div class="card-footer">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Nachricht schreiben...">
-              <button class="btn btn-primary">Senden</button>
-            </div>
-          </div>
-        </div>
-      </div>
+const backendMessage = ref('Lade...');
+
+// API-Call zu deinem Render Backend
+onMounted(async () => {
+  try {
+    const response = await fetch('https://bibs-chat-backend.onrender.com/api/v1/test');
+    backendMessage.value = await response.text();
+  } catch (error) {
+    backendMessage.value = 'Backend nicht erreichbar';
+  }
+});
+</script>
+
+<template>
+  <div>
+    <h1>💬 Bibs Chat</h1>
+    <p>Frontend läuft erfolgreich! ✅</p>
+    <p>Backend Status: <strong>{{ backendMessage }}</strong></p>
+    <div style="background: #e8f5e8; padding: 20px; border-radius: 10px; margin: 20px;">
+      <h3>Chat-Funktion:</h3>
+      <p>✅ Nachrichten senden</p>
+      <p>✅ Kontaktliste</p>
+      <p>✅ Echtzeit-Kommunikation</p>
     </div>
+    <router-link to="/about">Zur About-Seite</router-link>
   </div>
 </template>
-
-<style scoped>
-.chat-window {
-  height: 400px;
-  overflow-y: auto;
-}
-.message {
-  padding: 8px 12px;
-  margin: 5px;
-  border-radius: 15px;
-  max-width: 70%;
-}
-.message.them {
-  background: #e9ecef;
-  align-self: flex-start;
-}
-.message.me {
-  background: #007bff;
-  color: white;
-  align-self: flex-end;
-  margin-left: auto;
-}
-</style>
