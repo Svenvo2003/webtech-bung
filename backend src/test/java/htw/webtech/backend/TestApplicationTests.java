@@ -1,4 +1,4 @@
-package htw.webtech.test;
+package htw.webtech.backend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

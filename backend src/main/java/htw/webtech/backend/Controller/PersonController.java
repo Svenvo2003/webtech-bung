@@ -1,8 +1,8 @@
-package htw.webtech.test.Controller;
+package htw.webtech.backend.Controller;
 
-import htw.webtech.test.model.PersonDTO;
-import htw.webtech.test.service.PersonService;
-import htw.webtech.test.entity.Message;
+import htw.webtech.backend.model.PersonDTO;
+import htw.webtech.backend.service.PersonService;
+import htw.webtech.backend.entity.Message;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.time.LocalDateTime;

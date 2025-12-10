@@ -1,6 +1,6 @@
-package htw.webtech.test.service;
+package htw.webtech.backend.service;
 
-import htw.webtech.test.model.PersonDTO;
+import htw.webtech.backend.model.PersonDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

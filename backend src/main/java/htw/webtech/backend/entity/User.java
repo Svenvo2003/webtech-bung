@@ -1,4 +1,4 @@
-package htw.webtech.test.entity;
+package htw.webtech.backend.entity;
 
 import java.time.LocalDateTime;
 
