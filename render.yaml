@@ -1,7 +1,7 @@
 services:
   - type: web
     name: webtech-bung-backend
-    runtime: java21  # WICHTIG: Das ist jetzt korrekt!
+    runtime: java21
     buildCommand: ./gradlew build
     startCommand: java -jar build/libs/*.jar
     envVars:
