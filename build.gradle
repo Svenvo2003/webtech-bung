@@ -35,3 +35,11 @@ repositories {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+bootJar {
+	mainClass = 'htw.webtech.backend.TestApplication'
+}
+
+jar {
+	enabled = false
+}
