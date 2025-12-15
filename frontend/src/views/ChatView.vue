@@ -60,7 +60,7 @@ async function loadPersonsSimple(): Promise<void> {
 async function testPostRoute() {
   isPosting.value = true;
   postResult.value = ' Sende POST an Backend...';
-
+//ruft das Frontend die POST-Route auf
   try {
     const response = await fetch('https://bibs-chat-backend.onrender.com/api/v1/persons', {
       method: 'POST', // WICHTIG für Deadline!

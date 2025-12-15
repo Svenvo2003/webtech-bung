@@ -28,8 +28,8 @@ public class PersonController {
 
     // GET: Alle Personen abrufen
     @GetMapping("/persons")
-    public ResponseEntity<List<PersonDTO>> getPersons() {
-        return ResponseEntity.ok(personService.getAllPersons());
+    public ResponseEntity<List<User>> getPersons() {
+        return ResponseEntity.ok(userRepository.findAll());
     }
 
     // POST: Neue Person (User) erstellen
