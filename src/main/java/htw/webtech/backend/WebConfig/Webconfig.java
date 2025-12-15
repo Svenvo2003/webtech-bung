@@ -14,7 +14,10 @@ public class Webconfig implements WebMvcConfigurer {
                 .allowedMethods("*")
                 .allowedOrigins(
                         "http://localhost:5173/",
-                        "https://bibs-chat-frontend.onrender.com"
-                );
+                        "https://bibs-chat-frontend.onrender.com",
+                        "https://bibs-chat-backend.onrender.com" //  Backend selbst
+                )
+                .allowedHeaders("*")
+                .allowCredentials(true);
     }
 }
