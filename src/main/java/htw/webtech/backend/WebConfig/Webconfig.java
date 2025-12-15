@@ -12,12 +12,12 @@ public class Webconfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/api/**")
                 .allowedMethods("*")
-                .allowedOrigins(
+                .allowedOriginPatterns(  //
                         "http://localhost:5173/",
                         "https://bibs-chat-frontend.onrender.com",
-                        "https://bibs-chat-backend.onrender.com" //  Backend selbst
+                        "https://bibs-chat-backend.onrender.com"
                 )
                 .allowedHeaders("*")
-                .allowCredentials(true);
+                .allowCredentials(true);  //
     }
 }
