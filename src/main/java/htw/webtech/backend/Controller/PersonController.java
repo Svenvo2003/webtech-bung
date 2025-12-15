@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = {"http://localhost:5173", "https://bibs-chat-frontend.onrender.com"})
 public class PersonController {
     private final PersonService personService;
     private final UserRepository userRepository;
