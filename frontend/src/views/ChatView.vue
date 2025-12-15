@@ -59,7 +59,7 @@ async function loadPersonsSimple(): Promise<void> {
 // 3. POST-FUNKTION FÜR DIE DEADLINE
 async function testPostRoute() {
   isPosting.value = true;
-  postResult.value = '⏳ Sende POST an Backend...';
+  postResult.value = ' Sende POST an Backend...';
 
   try {
     const response = await fetch('https://bibs-chat-backend.onrender.com/api/v1/persons', {
@@ -78,7 +78,7 @@ async function testPostRoute() {
     console.log('POST-Ergebnis:', result);
 
     if (response.ok) {
-      postResult.value = `✅ POST erfolgreich! ${result}`;
+      postResult.value = ` POST erfolgreich! ${result}`;
       // Personenliste neu laden
       await loadPersonsSimple();
     } else {
@@ -108,9 +108,9 @@ onMounted(() => {
 
     <!-- POST-Button für die Deadline -->
     <div class="deadline-section">
-      <h3>📤 POST-Route Test (für Deadline 14.12.)</h3>
+      <h3>📤 POST-Route Test </h3>
       <button @click="testPostRoute" :disabled="isPosting" class="post-button">
-        {{ isPosting ? '⏳ Speichere...' : '🔗 POST-Route testen' }}
+        {{ isPosting ? ' Speichere...' : ' POST-Route testen' }}
       </button>
 
       <div v-if="postResult" class="post-result">
