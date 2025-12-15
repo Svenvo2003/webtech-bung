@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 import { ref, onMounted } from 'vue'
-// axios import nicht nötig, wenn du fetch verwendest
-// import axios from "axios";
 
 const router = useRouter();
 const backendMessage = ref<string>('Lade...');
+const postResult = ref<string>('');
+const isPosting = ref<boolean>(false);
 
 // Interface für TypeScript definieren
 interface ChatUser {
@@ -25,12 +25,12 @@ async function requestmessage(): Promise<void> {
 
     if (response.ok) {
       const text = await response.text();
-      backendMessage.value = `✅ backend läuft`; // "✅ Hallo Wilkoomen, Backend geht!"
+      backendMessage.value = ` Backend läuft`; // " Hallo Wilkoomen, Backend geht!"
     } else {
-      backendMessage.value = `❌ Backend-Fehler: ${response.status}`;
+      backendMessage.value = ` Backend-Fehler: ${response.status}`;
     }
   } catch (error) {
-    backendMessage.value = '❌ Backend nicht erreichbar';
+    backendMessage.value = ' Backend nicht erreichbar';
     console.error('Backend-Fehler:', error);
   }
 }
@@ -56,22 +56,78 @@ async function loadPersonsSimple(): Promise<void> {
   }
 }
 
-// 3. BEIM START BEFÜLLEN
+// 3. POST-FUNKTION FÜR DIE DEADLINE
+async function testPostRoute() {
+  isPosting.value = true;
+  postResult.value = '⏳ Sende POST an Backend...';
+
+  try {
+    const response = await fetch('https://bibs-chat-backend.onrender.com/api/v1/persons', {
+      method: 'POST', // WICHTIG für Deadline!
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        firstname: 'Test',
+        lastname: 'User',
+        age: 25
+      })
+    });
+
+    const result = await response.text();
+    console.log('POST-Ergebnis:', result);
+
+    if (response.ok) {
+      postResult.value = `✅ POST erfolgreich! ${result}`;
+      // Personenliste neu laden
+      await loadPersonsSimple();
+    } else {
+      postResult.value = ` POST-Fehler: ${result}`;
+    }
+
+  } catch (error) {
+    postResult.value = ' Netzwerkfehler beim POST';
+    console.error('POST-Fehler:', error);
+  } finally {
+    isPosting.value = false;
+  }
+}
+
+// 4. ALLES BEIM START LADEN
 onMounted(() => {
   requestmessage();    // Backend testen
-  loadPersonsSimple(); // Personen laden (RICHTIGE Funktion!)
+  loadPersonsSimple(); // Personen laden
 });
 </script>
 
 <template>
   <div>
     <h1>💬 Bibs Chat</h1>
-    <p>Frontend läuft erfolgreich! test ✅</p>
-
-    <!-- Jetzt zeigt es das echte Backend-Status -->
+    <p>Frontend läuft erfolgreich! test </p>
     <p>Backend Status: <strong>{{ backendMessage }}</strong></p>
 
-    <!-- Jetzt werden echte API-Daten angezeigt -->
+    <!-- POST-Button für die Deadline -->
+    <div class="deadline-section">
+      <h3>📤 POST-Route Test (für Deadline 14.12.)</h3>
+      <button @click="testPostRoute" :disabled="isPosting" class="post-button">
+        {{ isPosting ? '⏳ Speichere...' : '🔗 POST-Route testen' }}
+      </button>
+
+      <div v-if="postResult" class="post-result">
+        {{ postResult }}
+      </div>
+
+      <p class="hint">
+        <small>Klick = Frontend ruft POST-Route auf → Daten werden in Datenbank gespeichert</small>
+      </p>
+    </div>
+
+    <!-- Personen-Liste -->
+    <h3>Personen im Chat ({{ chatUsers.length }})</h3>
+    <div v-if="chatUsers.length === 0">
+      <p>Keine Personen geladen...</p>
+    </div>
+
     <div v-for="user in chatUsers" :key="user.id" class="col">
       <div class="card-body">
         <h5 class="card-title">{{ user.firstname }} {{ user.lastname }}</h5>
@@ -102,5 +158,50 @@ onMounted(() => {
 .card-text {
   margin: 0;
   color: #666;
+}
+
+/* Styling für POST-Button */
+.deadline-section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border: 2px dashed #007bff;
+  border-radius: 10px;
+}
+
+.post-button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.post-button:hover:not(:disabled) {
+  background: #0056b3;
+}
+
+.post-button:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+.post-result {
+  padding: 1rem;
+  background: white;
+  border-radius: 6px;
+  border-left: 4px solid #28a745;
+  font-family: monospace;
+  margin: 1rem 0;
+}
+
+.hint {
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
 }
 </style>
